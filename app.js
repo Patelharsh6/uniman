@@ -4,8 +4,9 @@ const path=require("path");
 const ejsMate=require("ejs-mate");
 
 
-app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'views'));
+app.use(express.static(path.join(__dirname,'public')));
 app.engine('ejs', ejsMate);
 
 
@@ -16,6 +17,27 @@ app.listen(port,()=>{
 
 
 
-app.get("/",(req,res)=>{
-    res.render("home.ejs");
-})
+app.get('/', (req, res) => {
+    res.render('home', {
+        title: 'University Management System',
+        path: req.path,
+        user: req.user || null,
+        features: [
+            {
+                icon: '#fa-user-graduate',
+                title: 'Student Management',
+                description: 'Comprehensive student records and progress tracking'
+            },
+            {
+                icon: '#fa-chalkboard-teacher',
+                title: 'Faculty Portal',
+                description: 'Tools for faculty to manage courses and student interactions'
+            },
+            {
+                icon: '#fa-book',
+                title: 'Course Management',
+                description: 'Complete control over curriculum and course offerings'
+            }
+        ]
+    });
+});

@@ -1,0 +1,16 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.nav{
+    background-color: antiquewhite;
+    height: 8vh;
+    width: 99.49vw;
+    margin: 0;
+    padding: 0px;
+}
+.logo img {
+    height: 85%;
+    width: 10%;
+    margin: 0.38%;
+}
