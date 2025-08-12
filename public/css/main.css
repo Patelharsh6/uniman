@@ -1,0 +1,179 @@
+body{
+    width: 100vw;
+}
+/* Main header container */
+    .site-header {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 0 1rem; /* Padding for mobile */
+    }
+
+    /* Inner container for alignment */
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4.5rem; /* 72px */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Logo and site name link */
+    .header-logo-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #1e293b; /* Dark slate color for text */
+    }
+
+    .header-logo-icon {
+        background-color: #3498db; /* Professional blue */
+        padding: 0.5rem; /* 8px */
+        border-radius: 0.5rem; /* 8px */
+        margin-right: 0.75rem; /* 12px */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-logo-text {
+        font-size: 1.25rem; /* 20px */
+        font-weight: 700; /* Bold */
+        display: none; /* Hide text on very small screens */
+    }
+
+    /* User profile section */
+    .header-user-profile {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-notification-button {
+        background-color: transparent;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 9999px; /* Full circle */
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        margin-right: 0.5rem;
+        color: #475569; /* Medium slate color */
+    }
+
+    .header-notification-button:hover {
+        background-color: #f1f5f9; /* Light gray hover */
+    }
+
+    .header-profile-button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+
+    .header-profile-avatar {
+        height: 2.5rem; /* 40px */
+        width: 2.5rem; /* 40px */
+        border-radius: 9999px;
+        object-fit: cover;
+        border: 2px solid #e2e8f0;
+    }
+
+    .header-profile-name {
+        display: none; /* Hidden on mobile */
+        margin-left: 0.75rem;
+        font-weight: 500;
+        color: #334155;
+    }
+    
+    .header-profile-arrow {
+        display: none; /* Hidden on mobile */
+        margin-left: 0.25rem;
+        color: #64748b;
+    }
+
+    /* Mobile menu button (hamburger icon) */
+    .mobile-menu-button {
+        display: block; /* Shown on mobile */
+        background-color: transparent;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        color: #334155;
+    }
+
+    /*
+     * ===================================================================
+     * Responsive Design (Media Queries)
+     * ===================================================================
+     */
+
+    /* Small screens and up (e.g., larger phones) */
+    @media (min-width: 480px) {
+        .header-logo-text {
+            display: block; /* Show logo text */
+        }
+    }
+
+    /* Medium screens and up (e.g., tablets) */
+    @media (min-width: 768px) {
+        .site-header {
+            padding: 0 2rem; /* More padding for tablets/desktops */
+        }
+        .header-profile-name, .header-profile-arrow {
+            display: inline; /* Show user name and dropdown arrow */
+        }
+        .mobile-menu-button {
+            display: none; /* Hide hamburger menu */
+        }
+    }
+
+/* footer */
+.site-footer {
+        background-color: #2c3e50; /* A dark, professional slate blue */
+        color: #bdc3c7; /* A soft, light gray for text */
+        padding: 2.5rem 1rem;
+        text-align: center;
+        margin-top: 3rem;
+        border-top: 4px solid #3498db; /* A nice blue accent */
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-links {
+        margin-top: 0.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Allows links to wrap on smaller screens */
+    }
+
+    .footer-links a {
+        color: #ecf0f1; /* A slightly brighter text color for links */
+        text-decoration: none;
+        margin: 0.25rem 0.75rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: #3498db; /* Highlight color on hover */
+        text-decoration: underline;
+    }
+
+    .footer-links span {
+        display: none; /* Hide themiddot separators on mobile */
+    }
+
+    /* Media query for larger screens to show separators */
+    @media (min-width: 640px) {
+        .footer-links span {
+            display: inline;
+        }
+    }

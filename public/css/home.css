@@ -1,0 +1,14 @@
+.main-div{
+    display: flex;
+    /* padding-left: 10vw;  */
+}
+.features-grid{
+    /* padding: 20px; */
+    height: 80vh;
+    width: 20vw;
+    background-color: aqua;
+}
+.feature-card{
+    /* padding-left: 100rem; */
+    /* padding: 200px 200px 200px 200px; */
+}

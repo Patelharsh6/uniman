@@ -1,8 +1,65 @@
-<% layout("./layouts/boilarplate.ejs") %>
-<body>
-    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt quas, tempore quae, harum ipsam similique eius dolore facere, esse nesciunt autem magni optio repellat temporibus cupiditate facilis reprehenderit alias nostrum.</h3>
-    <main>
+<%- include('layouts/header') %>
+<div class="main-div">
+    <!-- Quick Access / Core Features Grid -->
+    <div class="features-grid">
+        
+        <!-- Announcements Card -->
+        <a href="/announcements" class="feature-card">
+            <div class="card-icon icon-orange">
+                <i class="fas fa-bell"></i>Announcements
+            </div>
+        </a>
 
-    </main>
-    
-</body>
+        <!-- Attendance Card -->
+        <a href="/attendance" class="feature-card">
+            <div class="card-icon icon-blue">
+                <i class="fas fa-calendar-check"></i>Attendance
+            </div>
+        </a>
+
+        <!-- Timetable Card (from "Timetable") -->
+        <a href="/timetable" class="feature-card">
+            <div class="card-icon icon-cyan">
+                <i class="fa-solid fa-calendar"></i>My Timetable
+            </div>
+        </a>
+
+        <!-- Course Materials Card (from "Teaching content") -->
+        <a href="/materials" class="feature-card">
+            <div class="card-icon icon-purple">
+                <i class="fas fa-book"></i>Course Materials
+            </div>
+        </a>
+
+        <!-- Exam Schedules Card -->
+        <a href="/exams" class="feature-card">
+            <div class="card-icon icon-amber">
+                <i class="fas fa-calendar-days"></i>Exam Schedules
+            </div>
+        </a>
+
+        <!-- Final Results Card -->
+        <a href="/results" class="feature-card">
+            <div class="card-icon icon-rose">
+                <i class="fas fa-award"></i>Final Results
+            </div>
+        </a>
+        
+        <!-- Academic Transcript Card (from "Transcript") -->
+        <a href="/transcript" class="feature-card">
+            <div class="card-icon icon-indigo">
+                <i class="fas fa-scroll"></i>Academic Transcript
+            </div>
+        </a>
+
+        <!-- Fee Payment Card (from "Billing") -->
+        <a href="/billing" class="feature-card">
+            <div class="card-icon icon-emerald">
+                <i class="fas fa-credit-card"></i>Fee Payment
+            </div>
+        </a>
+
+        
+    </div>
+</div>
+<%- include('layouts/footer') %>
