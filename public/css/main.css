@@ -1,5 +1,6 @@
-body{
-    width: 100vw;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 /* Main header container */
     .site-header {

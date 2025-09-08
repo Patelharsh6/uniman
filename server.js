@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const ejsMate = require("ejs-mate");
 const bodyParser = require("body-parser");
+const bcrypt=require("bcrypt");
 
 // Import models
 const User = require("./models/User");
@@ -52,20 +53,39 @@ app.post( "/signup" , async (req,res)=>{
     }
     
 });
-app.get( "/login" , async (req,res)=>{
-    let { Email , Password } = req.body;
 
-    const existingUser = await User.findOne({ where: { Email } });
+app.post("/login", async (req, res) => {
+  try {
+    const { Email, Password } = req.body;
 
-    if (!existingUser) {
-      return res.status(400).json({ message: "Email is not registered!" });
+    // Find user by email
+    const user = await User.findOne({ where: { Email } });
+
+    if (!user) {
+      return res.status(400).json({ message: "Invalid email or password" });
     }
 
-    
+    // Compare entered password with stored hash
+    const isMatch = await bcrypt.compare(Password, user.Password);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
 
+    // Success response
+    res.status(200).json({
+      message: "Login successful",
+      user: {
+        id: user.User_ID,
+        name: `${user.First_Name} ${user.Last_Name}`,
+        email: user.Email,
+        role: user.Role
+      }
+    });
 
-
-    
+  } catch (err) {
+    console.error("Login error:", err);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
 app.get("/", (req, res) => {
